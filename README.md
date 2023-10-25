@@ -46,6 +46,7 @@ This feature is possible thanks to [atcasanova](https://github.com/atcasanova)
 ## Credits
 - [13 foot wall](https://github.com/wasi-master/13ft)
 - [dragable button](https://github.com/livebloggerofficial/Draggable-Button)
+- [color-blindness-emulation](https://github.com/hail2u/color-blindness-emulation)
 
 ## Resources
 - [Vercel Documentation](https://vercel.com/docs)

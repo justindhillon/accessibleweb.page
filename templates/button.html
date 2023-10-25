@@ -1,14 +1,58 @@
+<!--Color Blind Filters-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1">
+  <defs>
+    <filter id="protanopia">
+      <feColorMatrix
+        in="SourceGraphic"
+        type="matrix"
+        values="0.567, 0.433, 0,     0, 0
+                0.558, 0.442, 0,     0, 0
+                0,     0.242, 0.758, 0, 0
+                0,     0,     0,     1, 0"/>
+    </filter>
+    <filter id="deuteranopia">
+      <feColorMatrix
+        in="SourceGraphic"
+        type="matrix"
+        values="0.625, 0.375, 0,   0, 0
+                0.7,   0.3,   0,   0, 0
+                0,     0.3,   0.7, 0, 0
+                0,     0,     0,   1, 0"/>
+    </filter>
+    <filter id="tritanopia">
+      <feColorMatrix
+        in="SourceGraphic"
+        type="matrix"
+        values="0.95, 0.05,  0,     0, 0
+                0,    0.433, 0.567, 0, 0
+                0,    0.475, 0.525, 0, 0
+                0,    0,     0,     1, 0"/>
+    </filter>
+  </defs>
+</svg>
+
 <!--Accessibility Button CSS-->
 <style>
   body.grayscale {
-      /* IE */
-      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
 
-      /* Chrome, Safari */
-      -webkit-filter: grayscale(1);
+  body.protanopia {
+    -webkit-filter: url('#protanopia');
+    filter: url('#protanopia');
+  }
 
-      /* Firefox */
-      filter: grayscale(1);
+  body.deuteranopia {
+    -webkit-filter: url('#deuteranopia');
+    filter: url('#deuteranopia');
+  }
+
+  body.tritanopia {
+    -webkit-filter: url('#tritanopia');
+    filter: url('#tritanopia');
   }
 
   .custom-btn-container {
@@ -81,14 +125,11 @@
 <script>
   const body = document.body;
 
-  let grayscaleIsEnabled = false;
-  function grayscale() {
-    if (grayscaleIsEnabled) {
-      body.classList.remove("grayscale");
-      grayscaleIsEnabled = false;
+  function addFilter(property) {
+    if (body.classList.contains(property)) {
+      body.classList.remove(property);
     } else {
-      body.classList.add("grayscale");
-      grayscaleIsEnabled = true;
+      body.classList.add(property);
     }
   }
 </script>
@@ -98,8 +139,12 @@
   <div class="btn">+</div>
 
   <div class="btn-options">
-    <button onclick="grayscale()" href="#">Grayscale</button>
-    <button href="#">Color Blind</button>
+    <button onclick="addFilter('grayscale')" href="#">Grayscale</button>
+    <button onclick="addFilter('deuteranopia')" href="#">Deuteranopia</button>
+    <button onclick="addFilter('protanopia')" href="#">Protanopia</button>
+    <button onclick="addFilter('tritanopia')" href="#">Tritanopia</button>
+    <button href="#">Contrast</button>
+    <button href="#">Blur</button>
   </div>
 </div>
 
