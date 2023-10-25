@@ -44,7 +44,10 @@ You can also append the url at the end of the link and it will also work. (e.g i
 This feature is possible thanks to [atcasanova](https://github.com/atcasanova)
 
 ## Credits
+- [13 foot wall](https://github.com/wasi-master/13ft)
+- [dragable button](https://github.com/livebloggerofficial/Draggable-Button)
+
+## Resources
 - [Vercel Documentation](https://vercel.com/docs)
 - [Flask Docs](https://flask.palletsprojects.com/en/3.0.x/)
 - [Python Docs](https://docs.python.org/3/)
-- [Inspiration](https://github.com/wasi-master/13ft)
