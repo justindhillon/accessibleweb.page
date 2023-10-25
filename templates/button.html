@@ -55,6 +55,16 @@
     filter: url('#tritanopia');
   }
 
+  body.contrast {
+    -webkit-filter: contrast(25%);
+    filter: contrast(25%);
+  }
+
+  body.blur {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+
   .custom-btn-container {
     z-index: 9999999999;
     height: 48px;
@@ -143,8 +153,8 @@
     <button onclick="addFilter('deuteranopia')" href="#">Deuteranopia</button>
     <button onclick="addFilter('protanopia')" href="#">Protanopia</button>
     <button onclick="addFilter('tritanopia')" href="#">Tritanopia</button>
-    <button href="#">Contrast</button>
-    <button href="#">Blur</button>
+    <button onclick="addFilter('contrast')" href="#">Contrast</button>
+    <button onclick="addFilter('blur')" href="#">Blur</button>
   </div>
 </div>
 
