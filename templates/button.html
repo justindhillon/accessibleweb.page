@@ -1,74 +1,105 @@
 <!--Accessibility Button CSS-->
 <style>
+  body.grayscale {
+      /* IE */
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+
+      /* Chrome, Safari */
+      -webkit-filter: grayscale(1);
+
+      /* Firefox */
+      filter: grayscale(1);
+  }
+
   .custom-btn-container {
-      height: 48px;
-      width: 48px;
-      background: #023047;
-      border-radius: 50%;
-      position: absolute;
-      top: 48px;
-      right: 100px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    z-index: 9999999999;
+    height: 48px;
+    width: 48px;
+    background: #023047;
+    border-radius: 50%;
+    position: absolute;
+    top: 48px;
+    right: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .custom-btn-container.active .btn {
-      transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
   }
 
   .custom-btn-container .btn {
-      color: #f1faee;
-      font-size: 36px;
-      font-weight: bold;
-      user-select: none;
-      transition: all 500ms;
+    color: #f1faee;
+    font-size: 36px;
+    font-weight: bold;
+    user-select: none;
+    transition: all 500ms;
   }
 
   .custom-btn-container .btn-options {
-      position: absolute;
-      left: -350%;
-      top: -50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transform: translateX(50px);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 500ms;
+    position: absolute;
+    left: -350%;
+    top: -50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateX(50px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 500ms;
   }
 
   .custom-btn-container.active .btn-options {
-      transform: translateX(0);
-      opacity: 1;
-      pointer-events: auto;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  .custom-btn-container .btn-options a {
-      display: block;
-      padding: 8px 32px;
-      background: #90e0ef;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: "Roboto", sans-serif;
-      font-size: 15px;
-      color: #000814;
-      transition: all 500ms;
+  .custom-btn-container .btn-options button {
+    display: block;
+    padding: 8px 32px;
+    background: #90e0ef;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    color: #000814;
+    transition: all 500ms;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #000;
+    height: auto;
   }
 
-  .custom-btn-container .btn-options a:hover {
-      background: #000814;
-      color: #90e0ef;
+  .custom-btn-container .btn-options button:hover {
+    background: #000814;
+    color: #90e0ef;
   }
 </style>
+
+<!--Accessibility Functions-->
+<script>
+  const body = document.body;
+
+  let grayscaleIsEnabled = false;
+  function grayscale() {
+    if (grayscaleIsEnabled) {
+      body.classList.remove("grayscale");
+      grayscaleIsEnabled = false;
+    } else {
+      body.classList.add("grayscale");
+      grayscaleIsEnabled = true;
+    }
+  }
+</script>
 
 <!--Accessibility Button HTML-->
 <div class="custom-btn-container">
   <div class="btn">+</div>
 
   <div class="btn-options">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Testimonials</a>
+    <button onclick="grayscale()" href="#">Grayscale</button>
+    <button href="#">Color Blind</button>
   </div>
 </div>
 
@@ -78,6 +109,6 @@
 <script>
   $('.custom-btn-container').draggable();
   $('.custom-btn-container').click(function() {
-      $(this).toggleClass('active');
+    $(this).toggleClass('active');
   })
 </script>
