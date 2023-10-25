@@ -1,15 +1,22 @@
 # a11y
 
-## What is this?
-
-Experience your website through the lens of visual, auditory, or mobility impairments
-
-## How does it work?
+## Tech Stack
 
 - Flask as the web framwork
 - Flask for handling http requests
 - Python as the programming language
 - Vercel for deployment
+
+## FAQ
+
+### What?
+Test out any website with tools to simulate the experience of visual, auditory, or mobility impairments
+
+### Why?
+People struggle with the poor website design everyday. By using this project, you could know what parts of your website needs improvement. Or at the very least, we can spread awareness about the stuggles people face.
+
+### How does it work?
+The idea is pretty simple, this website caches the website you are looking for, modify the page to add the options, and then serve it to you.
 
 ## Development
 
