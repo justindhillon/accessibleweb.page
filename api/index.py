@@ -13,7 +13,6 @@ def accessibility_settings(url):
     response.encoding = response.apparent_encoding
     return response.text
 
-
 @app.route("/")
 def main_page():
     return "Hello world"
