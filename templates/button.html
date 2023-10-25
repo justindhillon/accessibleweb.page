@@ -1,0 +1,83 @@
+<!--Accessibility Button CSS-->
+<style>
+  .custom-btn-container {
+      height: 48px;
+      width: 48px;
+      background: #023047;
+      border-radius: 50%;
+      position: absolute;
+      top: 48px;
+      right: 100px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .custom-btn-container.active .btn {
+      transform: rotateZ(45deg);
+  }
+
+  .custom-btn-container .btn {
+      color: #f1faee;
+      font-size: 36px;
+      font-weight: bold;
+      user-select: none;
+      transition: all 500ms;
+  }
+
+  .custom-btn-container .btn-options {
+      position: absolute;
+      left: -350%;
+      top: -50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transform: translateX(50px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 500ms;
+  }
+
+  .custom-btn-container.active .btn-options {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .custom-btn-container .btn-options a {
+      display: block;
+      padding: 8px 32px;
+      background: #90e0ef;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      color: #000814;
+      transition: all 500ms;
+  }
+
+  .custom-btn-container .btn-options a:hover {
+      background: #000814;
+      color: #90e0ef;
+  }
+</style>
+
+<!--Accessibility Button HTML-->
+<div class="custom-btn-container">
+  <div class="btn">+</div>
+
+  <div class="btn-options">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Testimonials</a>
+  </div>
+</div>
+
+<!--Accessibility Button Javascript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+<script>
+  $('.custom-btn-container').draggable();
+  $('.custom-btn-container').click(function() {
+      $(this).toggleClass('active');
+  })
+</script>

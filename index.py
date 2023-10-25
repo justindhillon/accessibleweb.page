@@ -5,7 +5,8 @@ from flask import request
 app = flask.Flask(__name__)
 
 def add_accessibility_settings(html):
-    settings_html = "<div>memes</div>"
+    with open('templates/button.html', 'r') as file:
+        settings_html = file.read()
     html_with_settings = html + settings_html
     return html_with_settings
 
