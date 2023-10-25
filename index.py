@@ -4,14 +4,16 @@ from flask import request
 
 app = flask.Flask(__name__)
 
+def add_accessibility_settings(html):
+    settings_html = "<div>memes</div>"
+    html_with_settings = html + settings_html
+    return html_with_settings
+
 def accessibility_settings(url):
-    """
-    TODO:
-    Add accessibility settings
-    """
     response = requests.get(url)
     response.encoding = response.apparent_encoding
-    return response.text
+    with_accessibility_settings = add_accessibility_settings(response.text)
+    return with_accessibility_settings
 
 @app.route('/', methods=['GET', 'POST'])
 def main_page(): 
