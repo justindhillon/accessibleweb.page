@@ -8,7 +8,7 @@
   </head>
   <body class="bg-blue-5">
     <!-- Header -->
-    <div class="md:mt-12 max-w-screen-xl mx-auto" style="background-image: url('../public/background.jpg');">
+    <div class="md:mt-12 max-w-screen-xl mx-auto" style="background-image: url('{{ url_for('static', filename='background.jpg') }}');">
       <div class="flex relative justify-center text-gray-700 text-center">
         <h1 class="px-6 py-24 md:px-0 max-w-screen-md text-5xl md:text-7xl font-extrabold tracking-tight md:order-2 z-10 text-white">Experience your website through the lens of visual, auditory, or mobility impairments</h1>
       </div>
@@ -50,9 +50,9 @@
 
   <!-- Footer -->
   <footer class="max-w-screen-sm justify-center items-center mx-auto py-16 px-4 md:px-6 flex flex-row gap-4">
-    <a class="w-8 h-8" target="_blank" href="mailto:justin.singh.dhillon@gmail.com"><img src="../public/email.svg" /></a>
-    <a class="w-8 h-8" target="_blank" href="https://github.com/justindhillon"><img src="../public/github.svg" /></a>
-    <a class="w-8 h-8" target="_blank" href="https://www.linkedin.com/in/justin-dhillon/"><img src="../public/linkedIn.svg" /></a>
-    <a class="w-8 h-8" target="_blank" href="https://twitter.com/justindhillon0"><img src="../public/twitter.svg" /></a>
+    <a class="w-8 h-8" target="_blank" href="mailto:justin.singh.dhillon@gmail.com"><img src="{{url_for('static', filename='email.svg')}}" /></a>
+    <a class="w-8 h-8" target="_blank" href="https://github.com/justindhillon"><img src="{{url_for('static', filename='github.svg')}}" /></a>
+    <a class="w-8 h-8" target="_blank" href="https://www.linkedin.com/in/justin-dhillon/"><img src="{{url_for('static', filename='linkedIn.svg')}}" /></a>
+    <a class="w-8 h-8" target="_blank" href="https://twitter.com/justindhillon0"><img src="{{url_for('static', filename='twitter.svg')}}" /></a>
   </footer>
 </html> 
