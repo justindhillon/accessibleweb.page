@@ -1,20 +1,30 @@
 import flask
 import requests
+import urllib.parse
 from flask import request
+import re
 
 app = flask.Flask(__name__)
 
-def add_accessibility_settings(html):
-    with open('templates/button.html', 'r') as file:
-        settings_html = file.read()
-    html_with_settings = html + settings_html
-    return html_with_settings
+def gethtml(html, url):
+    print(html);
+    split_url = urllib.parse.urlsplit(url)
+    html = html.replace('src="/', 'src="https://www.' + split_url.netloc + "/")
+    html = html.replace("src='/", "src='https://www." + split_url.netloc + "/")
+    html = html.replace('herf="/', 'herf="https://www.' + split_url.netloc + "/")
+    html = html.replace("herf='/", "herf='https://www." + split_url.netloc + "/")
+    html = html.replace("url(/", "url(https://www." + split_url.netloc + "/")
+    html = html.replace('u="/', 'u="https://www.' + split_url.netloc + "/")
+    html = html.replace("u='/", "u='https://www." + split_url.netloc + "/")
+    return html
 
 def accessibility_settings(url):
     response = requests.get(url)
     response.encoding = response.apparent_encoding
-    with_accessibility_settings = add_accessibility_settings(response.text)
-    return with_accessibility_settings
+    with open('templates/button.html', 'r') as file:
+        button = file.read()
+    
+    return gethtml(response.text, url) + button
 
 @app.route('/', methods=['GET', 'POST'])
 def main_page(): 
