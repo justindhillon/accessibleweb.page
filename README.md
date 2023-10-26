@@ -40,7 +40,7 @@ click [this link](https://realpython.com/run-python-scripts/) for a tutorial on 
 
 ## Alternative method
 
-You can also append the url at the end of the link and it will also work. (e.g if your server is running at `http://127.0.0.1:5000` then you can go to `http://127.0.0.1:5000/https://example.com` and it will read out the contents of `https://example.com`)
+You can also append the url at the end of the link and it will also work. (e.g if your server is running at `http://localhost:5000` then you can go to `http://localhost:5000/https://example.com` and it will read out the contents of `https://example.com`)
 This feature is possible thanks to [atcasanova](https://github.com/atcasanova)
 
 ## Credits
