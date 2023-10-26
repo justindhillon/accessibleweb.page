@@ -16,28 +16,30 @@
 
     <!-- Input -->
     <script>
-      function onClick(url) {
+      function redirect() {
         // Get the URL entered by the user
-        var url = document.getElementById("url").value;
+        const url = document.getElementById("url").value;
 
         // Check if url is valid
         if (url.startsWith("http://") || url.startsWith("https://")) {
-            window.location.href = url;
+          window.location.href = "http://127.0.0.1:5000/" + url;
         } else {
-            alert("Invalid URL. Please enter a valid URL starting with 'http://' or 'https://'.");
+          window.location.href = "http://127.0.0.1:5000/" + "http://" + url;
         }
+
+        return false;
       };
     </script>
     <div class="px-4 md:px-6">
       <div class="mt-6 max-w-screen-lg mx-auto flex flex-col items-center">
-        <form class="flex text-xl" action="/proxy">
+        <form class="flex text-xl" onsubmit="return redirect();">
           <input required type="text" class="px-4 flex-1 min-w-0 border border-gray-400 border-r-0" placeholder="https://example.com/..." name="url" id="url">
           <input type="submit" class="hidden">
-          <button onclick="onClick()" class="px-4 py-2 min-w-12 text-sm leading-none font-medium border border-purple-500 bg-purple-100 text-purple-700 hover:bg-purple-200">Test <br>Website </button>
+          <button class="px-4 py-2 min-w-12 text-sm leading-none font-medium border border-purple-500 bg-purple-100 text-purple-700 hover:bg-purple-200">Test <br>Website </button>
         </form>
         <p class="mt-12 font-light text-xl">Test any website,</p>
         <div class="mt-1 inline-flex items-center font-medium text-xl">
-          <span>https://a11y.io/</span>
+          <span>https://accessibleweb.page/</span>
           <span class="bg-purple-200" style="line-height:0.5">&lt;URL&gt;</span>
         </div>
         <div class="mt-8">
