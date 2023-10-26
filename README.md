@@ -10,7 +10,7 @@
 ## FAQ
 
 ### What?
-Test out any website with tools to simulate the experience of visual, auditory, or mobility impairments
+Test out any website with tools to simulate the experience of colorblindness, blurry vision, or mobility impairments
 
 ### Why?
 People struggle with the poor website design everyday. By using this project, you could know what parts of your website needs improvement. Or at the very least, we can spread awareness about the stuggles people face.
