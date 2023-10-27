@@ -29,7 +29,7 @@ python -m pip install flask requests
 # If that doesn't work retry but replace `python` with `py`, then try `python3`, then try `py3`
 
 # Clone the sources
-git clone https://github.com/justindhillon/a11y
+git clone https://github.com/justindhillon/accessibleweb.page
 
 # Run the `main.py`
 
