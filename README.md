@@ -24,14 +24,14 @@ Install [python](https://www.python.org/downloads/)
 
 ```sh
 # Install flask
-python -m pip install flask
+python -m pip install flask requests
 
 # If that doesn't work retry but replace `python` with `py`, then try `python3`, then try `py3`
 
 # Clone the sources
 git clone https://github.com/justindhillon/a11y
 
-# Run the `index.py`
+# Run the `main.py`
 
 # Start the application at https://localhost:5000.
 ```
