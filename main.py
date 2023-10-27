@@ -16,7 +16,7 @@ def main_page():
     return flask.render_template('index.html')
 
 @app.route("/", defaults={"path": ""})
-@app.route('/<path:path>', methods=["GET"])
+@app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def redirect(path):
     # Redirects if url is a webpage
     full_url = flask.request.url
@@ -31,9 +31,24 @@ def redirect(path):
             except e:
                 raise e
 
-        print("https://www.google.com/" + parts[3] + "/" + parts[4])
-        response = requests.get("https://www.google.com/" + parts[3] + "/" + parts[4])
-        return response.content
+        target_url = "https://youtube.com/" + parts[3] + "/" + parts[4]
+
+        try:
+            if flask.request.method == 'GET':
+                response = requests.get(target_url)
+            elif flask.request.method == 'POST':
+                response = requests.post(target_url, data=flask.request.get_data())
+            elif flask.request.method == 'PUT':
+                response = requests.put(target_url, data=flask.request.get_data())
+            elif flask.request.method == 'DELETE':
+                response = requests.delete(target_url)
+            else:
+                return 'Error: Unsupported HTTP method.'
+
+            return response.content
+        
+        except requests.exceptions.RequestException as e:
+            return f'Error: {e}'
     
     return "Invalid URL"
 
