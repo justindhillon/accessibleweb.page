@@ -31,7 +31,7 @@ def redirect(path):
             except e:
                 raise e
 
-        target_url = flask.request.headers.get('Referer')[22:] + "/" + parts[3] + "/" + parts[4]
+        target_url = flask.request.headers.get('Referer')[27:] + "/" + parts[3] + "/" + parts[4]
 
         try:
             if flask.request.method == 'GET':
