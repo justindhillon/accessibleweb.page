@@ -17,6 +17,7 @@ The idea is pretty simple, this website caches the website you are looking for, 
 - Flask for handling http requests
 - Python as the programming language
 - Vercel for deployment
+- Mailing list by emailoctopus
 
 ## Development
 
