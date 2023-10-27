@@ -61,6 +61,8 @@
   }
 
   .custom-btn-container {
+    border: 2px solid white; /* 2px wide white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     z-index: 9999999999 !important;
     height: 48px !important;
     width: 48px !important;
@@ -182,31 +184,43 @@
 <!-- Accessibility Functions -->
 <script>
   function addFilter(property) {
-    document.body.classList.toggle(property);
-  }
-</script>
+    const isEnabled = document.body.classList.contains(property);
 
-<!-- Pop Up -->
-<script>
-  document.onclick = function() {
+    let filters = [
+      'grayscale',
+      'deuteranopia',
+      'protanopia',
+      'tritanopia',
+      'blur'
+    ]
+
+    // Remove each class from the filters array
+    for (let filter of filters) {
+      document.body.classList.remove(filter);
+    }
+
+    if (!isEnabled) {
+      document.body.classList.add(property);
+    }
+  }
+
+  function popup() {
     const popup = document.getElementById("myPopup");
     popup.classList.add("hidden");
   }
 </script>
 
 <!-- Accessibility Button HTML -->
-<div class="popup">
-  <div class="custom-btn-container">
-    <span class="popuptext" id="myPopup">Click me for settings!</span>
-    <div class="btn">+</div>
+<div class="custom-btn-container popup" onclick="popup()">
+  <span class="popuptext" id="myPopup">Click me for settings!</span>
+  <div class="btn">+</div>
 
-    <div class="btn-options">
-      <button onclick="addFilter('grayscale')" href="#">Grayscale</button>
-      <button onclick="addFilter('deuteranopia')" href="#">Deuteranopia</button>
-      <button onclick="addFilter('protanopia')" href="#">Protanopia</button>
-      <button onclick="addFilter('tritanopia')" href="#">Tritanopia</button>
-      <button onclick="addFilter('blur')" href="#">Blur</button>
-    </div>
+  <div class="btn-options">
+    <button onclick="addFilter('grayscale')">Grayscale</button>
+    <button onclick="addFilter('deuteranopia')">Deuteranopia</button>
+    <button onclick="addFilter('protanopia')">Protanopia</button>
+    <button onclick="addFilter('tritanopia')">Tritanopia</button>
+    <button onclick="addFilter('blur')">Blur</button>
   </div>
 </div>
 
@@ -217,7 +231,7 @@
   // Make button move
   $('.custom-btn-container').draggable();
   $('.custom-btn-container').click(function() {
-    $(this).toggleClass('active');
+    $('.custom-btn-container').toggleClass('active');
   })
 
   // Change links to working ones
