@@ -6,25 +6,13 @@ import re
 
 app = flask.Flask(__name__)
 
-def gethtml(html, url):
-    print(html);
-    split_url = urllib.parse.urlsplit(url)
-    html = html.replace('src="/', 'src="https://www.' + split_url.netloc + "/")
-    html = html.replace("src='/", "src='https://www." + split_url.netloc + "/")
-    html = html.replace('herf="/', 'herf="https://www.' + split_url.netloc + "/")
-    html = html.replace("herf='/", "herf='https://www." + split_url.netloc + "/")
-    html = html.replace("url(/", "url(https://www." + split_url.netloc + "/")
-    html = html.replace('u="/', 'u="https://www.' + split_url.netloc + "/")
-    html = html.replace("u='/", "u='https://www." + split_url.netloc + "/")
-    return html
-
 def accessibility_settings(url):
     response = requests.get(url)
     response.encoding = response.apparent_encoding
     with open('templates/button.html', 'r') as file:
         button = file.read()
     
-    return gethtml(response.text, url) + button
+    return response.text + button
 
 @app.route('/', methods=['GET', 'POST'])
 def main_page(): 
