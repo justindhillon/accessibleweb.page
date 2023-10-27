@@ -156,8 +156,20 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
 <script>
+  // Make button move
   $('.custom-btn-container').draggable();
   $('.custom-btn-container').click(function() {
     $(this).toggleClass('active');
   })
+
+  // Change links to working ones
+  $(document).ready(function() {
+    // Select all anchor (a) elements on the page
+    $('a').each(function() {
+      // Replace the href attribute with the new URL
+      var currentHref = $(this).attr('href');
+      var newHref = "http://127.0.0.1:5000/" + currentHref;
+      $(this).attr('href', newHref);
+    });
+  });
 </script>
