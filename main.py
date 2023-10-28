@@ -15,6 +15,15 @@ def accessibility_settings(url):
 def main_page(): 
     return flask.render_template('index.html')
 
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return flask.send_from_directory(app.static_folder, flask.request.path[1:])
+
+@app.route('/favicon.ico')
+def favicon():
+    return flask.send_from_directory(app.static_folder, 'favicon.ico')
+
 @app.route("/", defaults={"path": ""})
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def redirect(path):
