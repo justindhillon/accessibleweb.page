@@ -12,8 +12,8 @@
 1. Clone
 
    ```sh
-   git clone https://github.com/justindhillon/new-accessibleweb.page.git
-   cd new-accessibleweb.page
+   git clone https://github.com/justindhillon/accessibleweb.page.git
+   cd accessibleweb.page
    ```
 
 2. Install
