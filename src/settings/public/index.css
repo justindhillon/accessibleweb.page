@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body.grayscale {
+    -webkit-filter: grayscale(1) !important;
+    filter: grayscale(1) !important;
+}
+
+body.protanopia {
+    -webkit-filter: url('#protanopia') !important;
+    filter: url('#protanopia') !important;
+}
+
+body.deuteranopia {
+    -webkit-filter: url('#deuteranopia') !important;
+    filter: url('#deuteranopia') !important;
+}
+
+body.tritanopia {
+    -webkit-filter: url('#tritanopia') !important;
+    filter: url('#tritanopia') !important;
+}
+
+body.blur {
+    -webkit-filter: blur(2px) !important;
+    filter: blur(2px) !important;
+}
+
+iframe {
+    width: 100vw;
+    height: calc(100vh - 4em);
+    border: none;
+}
+
+header {
+    height: 2em;
+    width: 100% - 1em;
+    background-color: #111;
+    text-align: center;
+    display: flex;
+    align-content: stretch;
+    gap: 1em;
+    padding: 1em;
+  }
+
+/* Button styles */
+button {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 30px;
+    background-color: #9147ff;
+    color: white;
+    padding: 0 20px;
+    flex: 1;
+}
+
+button:hover {
+    background-color: #772ce8;
+}
