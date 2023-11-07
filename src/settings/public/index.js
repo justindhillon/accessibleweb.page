@@ -1,4 +1,3 @@
-
 function addFilter(property) {
     const isEnabled = document.body.classList.contains(property);
 

@@ -28,12 +28,23 @@
 
   <body>
     <header>
-      <button onclick="addFilter('grayscale')">Achromatopsia</button>
-      <button onclick="addFilter('deuteranopia')">Deuteranopia</button>
-      <button onclick="addFilter('protanopia')">Protanopia</button>
-      <button onclick="addFilter('tritanopia')">Tritanopia</button>
-      <button onclick="addFilter('blur')">Blurry Vision</button>
+      <button class="button" onclick="addFilter('grayscale')">Achromatopsia</button>
+      <button class="button" onclick="addFilter('deuteranopia')">Deuteranopia</button>
+      <button class="button" onclick="addFilter('protanopia')">Protanopia</button>
+      <button class="button" onclick="addFilter('tritanopia')">Tritanopia</button>
+      <button class="button" onclick="addFilter('blur')">Blurry Vision</button>
     </header>
+    <div class="top-bar">
+      <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Contact</a>
+          </div>
+      </div>
+    </div>
     <iframe src="https://accessibleweb-page-proxy.vercel.app/"></iframe>
   </body>
   <svg

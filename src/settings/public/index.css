@@ -44,10 +44,10 @@ header {
     align-content: stretch;
     gap: 1em;
     padding: 1em;
-  }
+}
 
 /* Button styles */
-button {
+.button {
     display: inline-block;
     outline: 0;
     border: none;
@@ -62,6 +62,64 @@ button {
     flex: 1;
 }
 
-button:hover {
+.button:hover {
     background-color: #772ce8;
+}
+
+/* Style the top bar */
+.top-bar {
+    background-color: #333;
+    overflow: hidden;
+    display: none;
+    width: 100vw;
+    height: 2em;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #333;
+    width: 100vw;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    height: 5em;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100vw;
+}
+
+/* Change color of links on hover */
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: none;
+    }
+
+    .top-bar {
+        display: inline;
+    }
 }
