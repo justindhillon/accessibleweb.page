@@ -1,4 +1,3 @@
-
 function addFilter(property) {
     const isEnabled = document.body.classList.contains(property);
 
@@ -19,3 +18,17 @@ function addFilter(property) {
         document.body.classList.add(property);
     }
 }
+
+document.querySelector(".dropbtn").addEventListener("click", function() {
+    var dropdownContent = document.querySelector(".dropdown-content");
+    if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none"; // Close the dropdown
+    } else {
+        dropdownContent.style.display = "block"; // Open the dropdown
+    }
+});
+
+document.querySelector(".dropdown-content").addEventListener("click", function() {
+    var dropdownContent = document.querySelector(".dropdown-content");
+    dropdownContent.style.display = "none";
+});

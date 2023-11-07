@@ -28,12 +28,24 @@
 
   <body>
     <header>
-      <button onclick="addFilter('grayscale')">Achromatopsia</button>
-      <button onclick="addFilter('deuteranopia')">Deuteranopia</button>
-      <button onclick="addFilter('protanopia')">Protanopia</button>
-      <button onclick="addFilter('tritanopia')">Tritanopia</button>
-      <button onclick="addFilter('blur')">Blurry Vision</button>
+      <button class="button" onclick="addFilter('grayscale')">Achromatopsia</button>
+      <button class="button" onclick="addFilter('deuteranopia')">Deuteranopia</button>
+      <button class="button" onclick="addFilter('protanopia')">Protanopia</button>
+      <button class="button" onclick="addFilter('tritanopia')">Tritanopia</button>
+      <button class="button" onclick="addFilter('blur')">Blurry Vision</button>
     </header>
+    <div class="top-bar">
+      <div class="dropdown">
+          <button class="dropbtn">Settings</button>
+          <div class="dropdown-content">
+            <button onclick="addFilter('grayscale')">Achromatopsia</button>
+            <button onclick="addFilter('deuteranopia')">Deuteranopia</button>
+            <button onclick="addFilter('protanopia')">Protanopia</button>
+            <button onclick="addFilter('tritanopia')">Tritanopia</button>
+            <button onclick="addFilter('blur')">Blurry Vision</button>
+          </div>
+      </div>
+    </div>
     <iframe src="https://accessibleweb-page-proxy.vercel.app/"></iframe>
   </body>
   <svg
