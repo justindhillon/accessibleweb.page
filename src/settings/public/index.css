@@ -66,6 +66,10 @@ header {
     background-color: #772ce8;
 }
 
+.button:active {
+    background-color: #6223c0;
+}
+
 /* Style the top bar */
 .top-bar {
     background-color: #333;
@@ -77,20 +81,29 @@ header {
 
 /* Style the dropdown button */
 .dropbtn {
-    background-color: #333;
     width: 100vw;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     height: 5em;
+    background-color: #9147ff;
 }
+
+.dropbtn:hover {
+    background-color: #772ce8;
+}
+
+.dropbtn:active {
+    background-color: #772ce8;
+}
+
 
 /* Style the dropdown content */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #9147ff;
     min-width: 160px;
     z-index: 1;
 }
@@ -106,7 +119,11 @@ header {
 
 /* Change color of links on hover */
 .dropdown-content a:hover {
-    background-color: #555;
+    background-color: #772ce8;
+}
+
+.dropdown-content a:active {
+    background-color: #772ce8;
 }
 
 @media screen and (max-width: 768px) {
