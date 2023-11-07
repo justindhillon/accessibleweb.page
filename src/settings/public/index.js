@@ -27,3 +27,8 @@ document.querySelector(".dropbtn").addEventListener("click", function() {
         dropdownContent.style.display = "block"; // Open the dropdown
     }
 });
+
+document.querySelector(".dropdown-content").addEventListener("click", function() {
+    var dropdownContent = document.querySelector(".dropdown-content");
+    dropdownContent.style.display = "none";
+});
