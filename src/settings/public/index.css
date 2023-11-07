@@ -81,13 +81,15 @@ header {
 
 /* Style the dropdown button */
 .dropbtn {
+    font-size: 2em;
     width: 100vw;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    height: 5em;
+    height: 2em;
     background-color: #9147ff;
+    font-weight: bold;
 }
 
 .dropbtn:hover {
@@ -108,8 +110,14 @@ header {
     z-index: 1;
 }
 
+.dropdown-content button {
+    font-size: 2em;
+    background-color: #9147ff;
+    border: 0;
+}
+
 /* Style the links inside the dropdown */
-.dropdown-content a {
+.dropdown-content button {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -118,11 +126,11 @@ header {
 }
 
 /* Change color of links on hover */
-.dropdown-content a:hover {
+.dropdown-content button:hover {
     background-color: #772ce8;
 }
 
-.dropdown-content a:active {
+.dropdown-content button:active {
     background-color: #772ce8;
 }
 
