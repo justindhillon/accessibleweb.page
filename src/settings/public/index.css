@@ -109,11 +109,6 @@ header {
     background-color: #555;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 @media screen and (max-width: 768px) {
     header {
         display: none;
