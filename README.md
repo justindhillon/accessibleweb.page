@@ -1,7 +1,7 @@
 <div align="center">
 <img height="150px" src="https://raw.githubusercontent.com/justindhillon/new-accessibleweb.page/main/src/landing-page/public/accessibility.png">
 <h1>accessibleweb.page</h1>
-<h3>Experience any website through the lens of color blindness or blurry vision</h3>
+<h3>Experience the internet through the challange of color blindness or blurry vision</h3>
 </div>
 
 ## See Proxy Part
