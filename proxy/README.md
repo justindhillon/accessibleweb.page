@@ -1,7 +1,7 @@
 <div align="center">
 <img height="150px" src="https://raw.githubusercontent.com/justindhillon/new-accessibleweb.page/main/src/landing-page/public/accessibility.png">
-<h1>accessibleweb.page</h1>
-<h3>Experience the internet through the challange of color blindness or blurry vision</h3>
+<h1>accessibleweb.page proxy</h1>
+<h3>The proxy portion of accessibleweb.page</h3>
 </div>
 
 ## Development Setup
@@ -9,8 +9,8 @@
 1. Clone
 
    ```sh
-   git clone https://github.com/justindhillon/accessibleweb.page.git
-   cd accessibleweb.page
+   git clone https://github.com/justindhillon/accessibleweb.page-proxy.git
+   cd accessibleweb.page-proxy
    ```
 
 2. Install
@@ -34,12 +34,6 @@
    ```
 
    You can stop it at any time by pressing <kbd>CTRL</kbd> + <kbd>C</kbt>
-
-## Contributing
-We welcome contributions of any kind including pages, suggestions, bug reports, pull requests etc. We would love to hear from you.
-
-## License
-accessibleweb.page uses the GPL-3.0 license.
 
 ## Credits
 - [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet)
